@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        
+        <div class="notcomp">
+            <h3 id="currentDay"></h3>
+        </div>
+        <div class="9AM">
+            <h4>9 AM</h4>
+            <input type="text" class="txt1" id="txt1" placeholder="Add a task">
+        </div>
+        <div class="10AM">
+            <h4>10 AM</h4>
+            <input type="text" class="txt2" id="txt2" placeholder="Add a task">
+        </div>
+        <div class="11AM">
+            <h4>11 AM</h4>
+            <input type="text" class="txt3" id="txt3" placeholder="Add a task">
+        </div>
+        <div class="12PM">
+            <h4>12 PM</h4>
+            <input type="text" class="txt4" id="txt4" placeholder="Add a task">
+        </div>
+        <div class="1PM">
+            <h4>1 PM</h4>
+            <input type="text" class="txt5" id="txt5" placeholder="Add a task">
+        </div>
+        <div class="2PM">
+            <h4>2 PM</h4>
+            <input type="text" class="txt6" id="txt6" placeholder="Add a task">
+        </div>
+        <div class="3PM">
+            <h4>3 PM</h4>
+            <input type="text" class="txt7" id="txt7" placeholder="Add a task">
+        </div>
+        <div class="4PM">
+            <h4>4 PM</h4>
+            <input type="text" class="txt8" id="txt8" placeholder="Add a task">
+        </div>
+        <div class="5PM">
+            <h4>5 PM</h4>
+            <input type="text" class="txt9" id="txt9" placeholder="Add a task">
+        </div>
+        <div class="comp">
+            <h3>Today's completed tasks</h3>
+        </div>
+    </div>
+    <script src="./moment.js"></script>
+    <script type="text/javascript">
+        var currentDate = moment().format('LL');
+        var currentTime = moment().format('LT');
+        console.log(currentTime);
+        $("#currentDay").text(currentDate);
+        $('.txt1').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt1').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt1").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.9AM').append(task);
+
+                $(".txt1").val('');
+            }
+                
+        });
+
+        $('.txt2').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt2').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt2").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.10AM').append(task);
+
+                $(".txt2").val('');
+            }
+                
+        });
+
+        $('.txt3').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt3').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt3").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.11AM').append(task);
+
+                $(".txt3").val('');
+            }
+                
+        });
+
+        $('.txt4').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt4').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt4").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.12PM').append(task);
+
+                $(".txt4").val('');
+            }
+                
+        });
+
+        $('.txt5').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt5').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt5").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.1PM').append(task);
+
+                $(".txt5").val('');
+            }
+                
+        });
+
+        $('.txt6').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt6').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt6").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.2PM').append(task);
+
+                $(".txt6").val('');
+            }
+                
+        });
+
+        $('.txt7').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt7').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt7").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.3PM').append(task);
+
+                $(".txt7").val('');
+            }
+                
+        });
+
+        $('.txt8').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt8').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt8").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.4PM').append(task);
+
+                $(".txt8").val('');
+            }
+                
+        });
+
+        $('.txt9').on('keyup', function(e){
+            if (e.keyCode == 13 && $('.txt9').val() != ''){
+                var task = $('<div class="task"></div>').text($(".txt9").val());
+                var del = $('<i class="fas fa-trash-alt"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        p.remove();
+                    });
+                });
+                
+                var check = $('<i class="fas fa-check"></i>').click(function(){
+                    var p = $(this).parent();
+                    p.fadeOut(function(){
+                        $('.comp').append(p);
+                        p.fadeIn();
+                    });
+                    $(this).remove();
+                });
+
+                task.append(del, check);
+                $('.5PM').append(task);
+                $('.5PM').show();
+
+                $(".txt9").val('');
+            }
+                
+        });
+    </script>
+</body>
+</html>
